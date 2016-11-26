@@ -1,1 +1,1 @@
-console.log("hello wooooorld");
+window.AlphaJpgApp = window.AlphaJpgApp || {};document.addEventListener("DOMContentLoaded", function(){	}, false);

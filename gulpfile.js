@@ -12,7 +12,8 @@ gulp.task('styles', function () {
 });
 gulp.task('scripts', function() {
   return gulp.src([
-  // 'src/assets/scripts/_some.js',
+   'src/assets/scripts/_util.js',
+   'src/assets/scripts/_content.js',
    'src/assets/scripts/main.js'
   ])
     .pipe(modules.sourcemaps.init())
