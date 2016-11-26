@@ -14,6 +14,8 @@ gulp.task('scripts', function() {
   return gulp.src([
    'src/assets/scripts/_util.js',
    'src/assets/scripts/_content.js',
+   'src/assets/scripts/_zip.js',
+   'src/assets/scripts/_creator.js',
    'src/assets/scripts/main.js'
   ])
     .pipe(modules.sourcemaps.init())

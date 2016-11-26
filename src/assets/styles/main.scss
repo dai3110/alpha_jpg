@@ -1,4 +1,89 @@
-BODY{
-	color : #FFFF00;
-	background-color : #000000;
+
+*{ box-sizing : border-box; }
+HTML, BODY, DIV, APPLET, OBJECT, IFRAME, H1, H2, H3, H4, H5, H6, P, BLOCKQUOTE, PRE, ABBR, ACRONYM, ADDRESS, BIG, CITE, CODE, DEL, DFN, EM, IMG, INS, KBD, Q, S, SAMP, SMALL, STRIKE, STRONG, SUB, SUP, TT, VAR, CENTER, DL, DT, DD, OL, UL, LI, FIELDSET, FORM, LEGEND, TABLE, CAPTION, TBODY, TFOOT, THEAD, TR, TH, TD, ARTICLE, ASIDE, CANVAS, DETAILS, EMBED, FIGURE, FIGCAPTION, FOOTER, HEADER, HGROUP, MENU, NAV, OUTPUT, RUBY, SECTION, SUMMARY, TIME, MARK, AUDIO, VIDEO{ margin : 0px; padding : 0px; border : 0px; font-style : normal; font-weight : normal; vertical-align : baseline; }
+SPAN, A, B, U, I, LABEL{ margin : 0px; padding : 0px; border : 0px; vertical-align : baseline; }
+ARTICLE, ASIDE, DETAILS, FIGCAPTION, FIGURE, FOOTER, HEADER, HGROUP, MENU, NAV, SECTION{ display : block; }
+BLOCKQUOTE, Q{ quotes : none; }
+BLOCKQUOTE:before, BLOCKQUOTE:after, Q:before, Q:after{ content : ''; content : none; }
+INPUT, TEXTAREA{ margin : 0px; padding : 0px; }
+TABLE{ border-collapse : separate; border-spacing : 0px; }
+CAPTION, TH{ text-align : left; }
+BODY{ text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+A:focus,INPUT:focus,BUTTON:focus,TEXTAREA:focus{ outline : none; }
+
+BODY{ padding : 10px; }
+UL{ margin-left : 15px; }
+SECTION,HEADER{
+	margin : 10px;
+	font-size : 0.9rem;
+	line-height : 1.2rem;
+}
+SECTION H1{
+	font-size : 1.4rem;
+	font-weight : bold;
+	margin : 10px;
+}
+
+#image_confirm{
+	&.noimage{
+		& #filesize,
+		& IMG,
+		& INPUT,
+		& LABEL{
+			display : none;
+		}
+	}
+	& IMG{
+		max-width : 200px;
+		max-height : 200px;
+		width : auto;
+		height : auto;
+	}
+	& INPUT[type="number"]{
+		width : 50px;
+	}
+	& INPUT[type="button"]{
+		width : auto;
+	}
+}
+#image_results{
+	& CANVAS{
+		display : none;
+	}
+	& IMG{
+		max-width : 200px;
+		max-height : 200px;
+		width : auto;
+		height : auto;
+		margin : 5px;
+	}
+}
+
+#filesize{
+	font-size : 1rem;
+}
+
+#generator{
+	padding : 10px;
+	border-radius : 8px;
+	font-size : 1.2rem;
+	line-height : 2.5rem;
+	border : 1px solid rgb(200,200,200);
+	background-color : rgb(230,230,230);
+	
+	& P{
+		font-size : 0.9rem;
+	}
+	& H1{
+		font-size : 1.2rem;
+		font-weight : bold;
+		margin : 0px;
+	}
+}
+
+#confirm_img{
+	background-image : url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AIBFC0YMIVMMgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAL0lEQVQ4y2NcsGDBfwY8ID4+Hp80AxMDhWDUgMFgAOP////xpoOFCxeOBuLwNwAA6aMJ+gCSWQwAAAAASUVORK5CYII=');
+}
+#filesize{
+	background-color : rgb(200,200,200);
 }

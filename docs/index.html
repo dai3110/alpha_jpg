@@ -3,9 +3,46 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="./assets/styles/main.css">
+		<script type="text/javascript" src="./assets/scripts/lib/jszip.min.js"></script>
+		<script type="text/javascript" src="./assets/scripts/lib/FileSaver.min.js"></script>
 		<script type="text/javascript" src="./assets/scripts/main.js"></script>
 	</head>
 	<body>
-		Hellon
+		<h1>Alpha JPG</h1>
+		<header>
+			<p>
+				概要は <a href="https://github.com/dai3110/alpha_jpg/blob/master/readme.rd" target="_blank">https://github.com/dai3110/alpha_jpg/blob/master/readme.rd</a>を参照してください。<br><br>
+				PNGを用意するのが難しい場合、<a href="900x900.png" target="_blank">900x900 サンプルPNGファイル</a>をご利用ください。
+				<a href="./example/">このサンプル画像を変換して使用した例</a>
+			</p>
+		</header>
+		<section id="generator">
+			<h1>透過PNG → JPG作成</h1>
+			<p>下記取説をお読みいただいた上でご利用ください</p>
+			<input type="file" accept="image/gif, image/png" id="image_input">
+			<div id="image_confirm" class="noimage">
+				<div id="confirm_img"><img src="" alt="入力画像"><span id="filesize"></span></div>
+				<label for="image_level">画質</label>
+				<input type="number" min="0" max="100" value="80" id="image_level">
+				<input type="button" id="image_create" value="JPG化した画像をZIPで保存">
+			</div>
+			<div id="image_results">
+				<canvas id="main_canvas"></canvas>
+				<canvas id="mask_canvas"></canvas>
+			</div>
+		</section>
+		<section>
+			<h1>注意点</h1>
+			<ul>
+				<li>
+					このツールは、この画面を表示する以外の通信を行いません。画像の生成から保存工程まで、すべてフロントサイドで完結しています。<br>
+					そのため、入力した画像が外部に漏れることはありませんが、<b>念のため機密性の高いデータの使用は避けてください</b>。
+				</li>
+				<li>
+					生成されたZIPファイルを展開すると、xxx.jpg, xxx_mask.jpg, index.html, alpha.js の４ファイルが含まれます。<br>
+					canvas要素の特性上、<b>ローカルでそのままブラウザで確認すると、(少なくとも)chromeではJavaScriptのエラーで動作しません</b>。localhostなど、Webサーバーを経由して確認してください。
+				</li>
+			</ul>
+		</section>
 	</body>
 </html>
