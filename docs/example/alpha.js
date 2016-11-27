@@ -36,7 +36,6 @@
         for(var i=0; i<alphaElements.length; i++){
             (function(elm){
                 if(!elm.complete){
-                    console.log("info:elm.addEventListener");
                     var mask = function(){
                         Alpha.mask(elm);
                         elm.removeEventListener("load", mask, false);
