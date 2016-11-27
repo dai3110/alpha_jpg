@@ -34,7 +34,18 @@
     document.addEventListener("DOMContentLoaded", function(){
         var alphaElements = document.querySelectorAll('[data-alpha-mask]');
         for(var i=0; i<alphaElements.length; i++){
-            Alpha.mask(alphaElements[i]);
+            (function(elm){
+                var mask = function(){
+                    Alpha.mask(elm);
+                };
+                if(!elm.complete){
+                    console.log("info:elm.addEventListener");
+                    elm.addEventListener("load", mask, false);
+                }
+                else{
+                    mask();
+                }
+            })(alphaElements[i]);
         }
     }, false);
 })();
